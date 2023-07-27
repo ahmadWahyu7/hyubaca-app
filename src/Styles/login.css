@@ -1,0 +1,16 @@
+.login-bg {
+    background-color: var(--main-color);
+}
+
+.login-card {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* OPTION LOGIN */
+
+/* LOGIN */
+
+/* REGISTER */

@@ -1,0 +1,82 @@
+/* HOME */
+.home {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.home h1 {
+    font-family: var(--main-font);
+}
+
+/* HERO */
+.hero h1 {
+    font-size: 6rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.img-hero {
+    width: 100vw;
+    height: auto;
+}
+
+.toggle-btn-hero1 {
+    display: none;
+}
+
+/* PROBLEM */
+
+/* SOLUTION */
+.solution-p {
+    font-size: 1.3rem;
+    max-width: 400px;
+}
+
+.solution-p span {
+    color: rgb(255, 230, 86);
+}
+
+/* ABOUT ME  */
+.aboutme p {
+    font-size: 1.2rem;
+}
+
+.problem h1, .solution h1, .aboutme h1 {
+    font-size: 3rem;
+}
+/* FOOTER  */
+footer {
+    background-color: var(--secondary-color);
+}
+
+@media screen and (min-width: 768px) {
+    /* HERO */
+    .img-hero {
+        height: 100vh;
+        width: auto;
+    }
+
+    .toggle-btn-hero1 {
+        display: block;
+    }
+
+    .toggle-btn-hero2 {
+        display: none;
+    }
+
+    @keyframes moveUpDown {
+        0%, 100% {
+        transform: translateY(0); /* Posisi awal dan akhir elemen */
+        }
+        50% {
+        transform: translateY(-10px); /* Posisi tengah elemen (bergerak ke atas) */
+        }
+    }
+    
+    .animasi-hero {
+        animation: moveUpDown 2s ease-in-out infinite; /* Nama animasi, durasi, pengulangan, dan timing function */
+    }
+  
+}

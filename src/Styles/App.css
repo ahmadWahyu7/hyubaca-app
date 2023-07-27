@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Itim&family=Lilita+One&display=swap');
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+:root {
+    --main-color: #5B96E4;
+    --secondary-color: rgb(32, 35, 77);
+    --login-bg-color: #DBE7FF;
+
+    --main-font: 'Darumadrop One', cursive;
+    --secondary-font: 'Itim', sans-serif;
+    --secondary-font-2: 'Lilita One', cursive;
+}
+
+* {
+    font-family: var(--secondary-font);
+}
+
+
