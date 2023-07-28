@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    const toggleShow = showPassword ? 'text' : 'password';
+    const toggleTextPassword = showPassword ? 'Tutup' : 'Lihat';
+
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
+    }
+    
 
     return (
         <div className="row row-cols-1 row-cols-md-2 login-bg">
@@ -22,13 +30,16 @@ const Login = () => {
                     </div>
                     <label htmlFor="loginPassword" className="form-label">Kata Sandi</label>
                     <div className="input-group mb-3">
-                        <input type="password"
+                        <input type={toggleShow}
                             id="loginPassword" 
                             className="form-control" 
                             placeholder="Masukan Kata Sandi ..." 
                             aria-label="Masukan Kata Sandi ..." 
                             aria-describedby="loginPassword2" />
-                        <button className="btn btn-outline-secondary" type="button" id="loginPassword2">Lihat</button>
+                        <button className="btn btn-outline-secondary" 
+                        type="button" 
+                        id="loginPassword2" 
+                        onClick={handleShowPassword}>{toggleTextPassword}</button>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
