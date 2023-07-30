@@ -6,7 +6,7 @@ const Solution = () => {
     const textClass = isDesktop ? 'text-center' : 'ps-5';
     const colSolution = isDesktop ? 'col d-flex align-items-center' : 'col d-flex align-items-center justify-content-center';
     const colImg = isDesktop ? 'col d-flex justify-content-end' : 'col d-flex justify-content-center';
-    const textSolution = isDesktop ? 'solution-p' : 'solution-p text-center'
+    const textSolution = isDesktop ? 'solution-p' : 'solution-p text-center px-3'
 
     return (
         <div className="solution py-5">

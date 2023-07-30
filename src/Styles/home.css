@@ -10,16 +10,11 @@
 
 /* HERO */
 .hero h1 {
-    font-size: 6rem;
+    font-size: 4.5rem;
 }
 
 .hero p {
     font-size: 1.5rem;
-}
-
-.img-hero {
-    width: 100vw;
-    height: auto;
 }
 
 .toggle-btn-hero1 {
@@ -53,10 +48,13 @@ footer {
 
 @media screen and (min-width: 768px) {
     /* HERO */
-    .img-hero {
+    .hero h1 {
+        font-size: 6rem;
+    }
+    /* .img-hero {
         height: 100vh;
         width: auto;
-    }
+    } */
 
     .toggle-btn-hero1 {
         display: block;

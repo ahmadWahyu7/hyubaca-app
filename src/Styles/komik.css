@@ -6,3 +6,27 @@
 .container-bg {
     background-color: white;
 }
+
+/* KOMIK */
+.link-react {
+    text-decoration: none;
+}
+
+.cover {
+    width: 300px;
+    height: 400px;
+    background-color: blueviolet;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+/* EPISODE */
+.comic-size > img {
+    width: 100vw;
+    max-width: 800px;
+    height: auto;
+}
