@@ -15,8 +15,10 @@ const AboutMe = () => {
                     className="img-fluid" 
                     data-aos="zoom-in" data-aos-delay="200" />
                 </div>
-                <div className="col d-flex align-items-center p-5">
-                    <p>Halo! Perkenalkan, saya adalah seorang pencinta seni dan pendidikan yang bersemangat untuk berbagi pengetahuan dan kisah-kisah menarik melalui dunia komik. Di balik layar, saya adalah seorang penggemar komik sejak masa kecil, dan kini, saya ingin menggabungkan dua cinta saya, yaitu komik dan pembelajaran, dalam website komik belajar ini. Melalui setiap panel dan karakter yang saya ciptakan, harapan saya adalah dapat menginspirasi dan menyenangkan para pembaca sambil memberikan pembelajaran yang bermanfaat. Saya sangat bersemangat untuk mengajak Anda dalam petualangan menarik ini dan berharap dapat menjadi bagian dari perjalanan belajar bersama Anda.</p>
+                <div className="col d-flex flex-column justify-content-center p-5">
+                    <p>Halo! Perkenalkan, saya Ahmad, seorang mahasiswa jurusan Pendidikan Ilmu Komputer di Universitas Pendidikan Indonesia.</p>
+                    <p>Saya membuat web Hyubaca ini untuk membagikan pengetahuan dari sebuah materi menjadi <strong>kisah-kisah menarik melalui dunia komik.</strong></p>
+                    <p>Melalui setiap panel dan karakter yang saya ciptakan, harapan saya adalah dapat menginspirasi dan menyenangkan para pembaca sambil <strong>memberikan pembelajaran yang bermanfaat.</strong></p>
                 </div>
             </div>
         </div>

@@ -29,13 +29,17 @@
     max-width: 400px;
 }
 
-.solution-p span {
-    color: rgb(255, 230, 86);
+.solution-p strong {
+    color: rgb(255, 238, 143);
 }
 
 /* ABOUT ME  */
 .aboutme p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+}
+
+.aboutme p strong {
+    color: rgb(255, 238, 143);
 }
 
 .problem h1, .solution h1, .aboutme h1 {

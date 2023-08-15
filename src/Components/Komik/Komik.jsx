@@ -21,7 +21,9 @@ const Komik = () => {
         <div>
             <div className="row row-cols-1 row-cols-md-2">
                 <div className="col d-flex justify-content-center my-3">
-                    <div className="cover"></div>
+                    <div className="cover">
+                        <img src={require('../../Assets/two-girls-one-boy.png')} alt="photosss" />
+                    </div>
                 </div>
                 <div className="col d-flex flex-column justify-content-center">
                     <h2>Jelajahi Excel</h2>

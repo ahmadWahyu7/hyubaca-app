@@ -18,7 +18,7 @@ const Solution = () => {
                     className="img-fluid" />
                 </div>
                 <div className={colSolution} >
-                    <p className={textSolution}>Materi dikemas dalam <span>BENTUK CERITA</span> yang ringan untuk dibaca kapan pun</p>
+                    <p className={textSolution}>Materi dikemas dalam <strong>BENTUK CERITA</strong> yang ringan untuk dibaca kapan pun</p>
                 </div>
                 <div className={colImg} data-aos="fade-right" data-aos-delay="200">
                     <img src="https://github.com/ahmadWahyu7/data-gambar/blob/main/hyubaca-assets/home-assets/asset-solution-02.png?raw=true" 
@@ -26,7 +26,7 @@ const Solution = () => {
                     className="img-fluid" />
                 </div>
                 <div className={colSolution}>
-                    <p className={textSolution}>Memiliki fitur <span>INTERAKTIF</span> yang mampu melatih pemahaman materi secara mendalam</p>
+                    <p className={textSolution}>Memiliki fitur <strong>INTERAKTIF</strong> yang mampu melatih pemahaman materi secara mendalam</p>
                 </div>
                 <div className={colImg} data-aos="fade-right" data-aos-delay="200">
                     <img src="https://github.com/ahmadWahyu7/data-gambar/blob/main/hyubaca-assets/home-assets/asset-solution-03.png?raw=true" 
@@ -34,7 +34,7 @@ const Solution = () => {
                     className="img-fluid" />
                 </div>
                 <div className={colSolution}>
-                    <p className={textSolution}>Terdapat <span>ENDING CERITA yang BERBEDA</span> untuk meningkatkan rasa penasaran</p>
+                    <p className={textSolution}>Terdapat <strong>ENDING CERITA yang BERBEDA</strong> untuk meningkatkan rasa penasaran</p>
                 </div>
             </div>
         </div>
