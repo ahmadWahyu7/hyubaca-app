@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 
 const Solution = () => {
     const isDesktop = useMediaQuery({ minWidth: 768 });
-    const textClass = isDesktop ? 'text-center' : 'ps-5';
+    const textClass = isDesktop ? 'text-center mb-3' : 'ps-5 mb-3';
     const colSolution = isDesktop ? 'col d-flex align-items-center' : 'col d-flex align-items-center justify-content-center';
     const colImg = isDesktop ? 'col d-flex justify-content-end' : 'col d-flex justify-content-center';
     const textSolution = isDesktop ? 'solution-p' : 'solution-p text-center px-3'

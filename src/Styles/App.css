@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Itim&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap');
 
 .row {
     --bs-gutter-x: 0;
@@ -12,10 +13,19 @@
     --main-font: 'Darumadrop One', cursive;
     --secondary-font: 'Itim', sans-serif;
     --secondary-font-2: 'Lilita One', cursive;
+    --third-font: 'GFS Neohellenic', sans-serif;
 }
 
 * {
     font-family: var(--secondary-font);
 }
 
+.full {
+    width: 100vw;
+    height: 100vh;
+}
+
+.btn-width {
+    width: 90vw;
+}
 

@@ -11,7 +11,6 @@ import AddComment from './AddComment';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../Data/firebase';
 
-
 const Episode = () => {
     const { epsId } = useParams();
     const [listEpisodes, setLisEpisodes] = useState([]);
@@ -35,6 +34,9 @@ const Episode = () => {
     const questionList = filterListEpisode.map(item => item.questions_eps).flat();
     const quizList = filterListEpisode.map(item => item.quiz_eps).flat();
     const commentsList = filterListEpisode.map(item => item.comments_eps).flat();
+    console.log(listEpisodes);
+    console.log("skip");
+    console.log(filterListEpisode);
 
     return (
         <div>

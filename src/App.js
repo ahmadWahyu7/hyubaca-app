@@ -4,7 +4,6 @@ import './Styles/komik.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from './Components/Home/Home';
-import OptionLogin from './Components/Login/OptionLogin';
 import Login from './Components/Login/Login';
 import Register from './Components/Login/Register';
 import SumberAset from './Components/Home/SumberAset';
@@ -20,7 +19,6 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/sumberaset' element={<SumberAset />} />
 
-          <Route path='/optionlogin' element={<OptionLogin />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
 

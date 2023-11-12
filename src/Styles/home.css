@@ -1,3 +1,7 @@
+.btn-primary {
+    background-color: #00355B;
+}
+
 /* HOME */
 .home {
     background-color: var(--main-color);
@@ -21,6 +25,12 @@
     display: none;
 }
 
+.logo-hero {
+    max-width: 100px;
+    height: auto;
+    width: 100%;
+}
+
 /* PROBLEM */
 
 /* SOLUTION */
@@ -30,16 +40,17 @@
 }
 
 .solution-p strong {
-    color: rgb(255, 238, 143);
+    color: var(--secondary-color);
 }
 
 /* ABOUT ME  */
 .aboutme p {
     font-size: 1.5rem;
+    font-family: var(--third-font);
 }
 
 .aboutme p strong {
-    color: rgb(255, 238, 143);
+    color: var(--secondary-color);
 }
 
 .problem h1, .solution h1, .aboutme h1 {
