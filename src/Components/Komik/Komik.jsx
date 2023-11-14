@@ -19,23 +19,18 @@ const Komik = () => {
 
     return (
         <div>
-            <div className="row row-cols-1 row-cols-md-2">
-                <div className="col d-flex justify-content-center my-3">
-                    <div className="cover">
-                        <img src={require('../../Assets/two-girls-one-boy.png')} alt="photosss" />
-                    </div>
-                </div>
-                <div className="col d-flex flex-column justify-content-center">
-                    <h2>Jelajahi Excel</h2>
+            <div className="comic-info px-3 d-flex align-items-end">
+                <div className="desc-info text-white p-2">
+                    <h2>I want to be ...</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum veniam libero facere officiis consequuntur aut deserunt hic id odio amet.</p>
                 </div>
             </div>
-            <div className="list-eps mt-5 pb-5">
+            <div className="list-eps pt-3 pb-5 bg-dark text-white">
                 <h2>List Episode</h2>
                 <div className="row row-cols-1 row-cols-md-3">
                     {listEpisodes.map( (eps) => (
                         <Link to={`/komik/${eps.id_eps}`} className="col p-1 link-react" key={`eps${eps.id_eps}`}>
-                            <div className="row border border-secondary rounded p-1 text-dark">
+                            <div className="row border border-secondary rounded p-1 text-white">
                                 <div className="col">
                                     <div className="square"></div>
                                 </div>

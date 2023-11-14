@@ -37,8 +37,8 @@ const AddComment = ({intEpsParam}) => {
             user_name : namaKomentarBaru,
             user_time : Timestamp.fromDate(currentDate),
             user_comment : komentarBaru
-          })
-           });
+            })
+          });
           alert('data telah ditambahkan');
         } catch (error) {
           console.log(error)
@@ -49,54 +49,34 @@ const AddComment = ({intEpsParam}) => {
 
     return (
         <div className="mb-3">
-            <section className="d-flex justify-content-center">
-                {/* Button trigger modal */}
-                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                Tambahkan Komentar Baru
-                </button>
-
-                {/* Modal */}
-                <div className="modal fade" id="exampleModal2" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                    <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="exampleModalLabel">Tambah Komentar</h1>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                        <form>
-                        <div className="mb-3">
-                            <label htmlFor="inputNamaKomentar" className="form-label">Nama</label>
-                            <input 
-                            type="text" 
-                            className="form-control" 
-                            id="inputNamaKomentar" 
-                            aria-describedby="input nama komentar"
-                            value={namaKomentarBaru}
-                            onChange={(e)=> setNamaKomentarBaru(e.target.value)}
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="inputIsiKomentar" className="form-label">Komentar</label>
-                            <input 
-                            type="text" 
-                            className="form-control" 
-                            id="inputIsiKomentar" 
-                            aria-describedby="input komentar baru"
-                            value={komentarBaru}
-                            onChange={(e) => setKomentarBaru(e.target.value)}
-                            />
-                        </div>
-                        </form>
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">tutup</button>
-                        <button type="button" className="btn btn-primary" onClick={handleAddComment} data-bs-dismiss="modal">Kirim</button>
-                    </div>
-                    </div>
+            <form className="px-3">
+                <div className="mb-3">
+                    <label htmlFor="inputNamaKomentar" className="form-label fw-bold">Nama</label>
+                    <input 
+                    type="text" 
+                    className="form-control" 
+                    id="inputNamaKomentar" 
+                    aria-describedby="input nama komentar"
+                    value={namaKomentarBaru}
+                    onChange={(e)=> setNamaKomentarBaru(e.target.value)}
+                    />
                 </div>
+                <div className="mb-3">
+                    <label htmlFor="inputIsiKomentar" className="form-label fw-bold">Komentar</label>
+                    <input 
+                    type="text" 
+                    className="form-control" 
+                    id="inputIsiKomentar" 
+                    aria-describedby="input komentar baru"
+                    value={komentarBaru}
+                    onChange={(e) => setKomentarBaru(e.target.value)}
+                    placeholder="tulis komentarmu di sini . . . "
+                    />
                 </div>
-            </section>
+                <div className="d-flex justify-content-end">
+                    <button type="button" className="btn btn-primary fw-bold" onClick={handleAddComment}>tambah komentar</button>
+                </div>
+            </form>
         </div>
     )
 }

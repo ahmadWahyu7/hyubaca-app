@@ -49,7 +49,7 @@ const Episode = () => {
                 <Quiz quizList={quizList} />
             </section>
             <section>
-                <h1 className='text-center mb-5'>Komentar</h1>
+                <h1 className='ms-3 mb-3'>Komentar</h1>
                 <AddComment intEpsParam={intEpsParam} />
                 <Comments commentsList={commentsList} />
             </section>

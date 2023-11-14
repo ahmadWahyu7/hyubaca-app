@@ -1,6 +1,9 @@
 import './Styles/App.css';
+import './Styles/home.css';
+import './Styles/home-desktop.css';
 import './Styles/login.css';
 import './Styles/komik.css';
+import './Styles/komik-desktop.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from './Components/Home/Home';

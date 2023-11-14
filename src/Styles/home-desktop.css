@@ -1,0 +1,32 @@
+@media screen and (min-width: 768px) {
+    /* HERO */
+    .hero h1 {
+        font-size: 6rem;
+    }
+    /* .img-hero {
+        height: 100vh;
+        width: auto;
+    } */
+
+    .toggle-btn-hero1 {
+        display: block;
+    }
+
+    .toggle-btn-hero2 {
+        display: none;
+    }
+
+    @keyframes moveUpDown {
+        0%, 100% {
+        transform: translateY(0); /* Posisi awal dan akhir elemen */
+        }
+        50% {
+        transform: translateY(-10px); /* Posisi tengah elemen (bergerak ke atas) */
+        }
+    }
+    
+    .animasi-hero {
+        animation: moveUpDown 2s ease-in-out infinite; /* Nama animasi, durasi, pengulangan, dan timing function */
+    }
+  
+}

@@ -3,17 +3,17 @@
   "name": "Hyubaca App",
   "icons": [
     {
-      "src": "hyubaca-favicon.ico",
+      "src": "hyubaca_favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "hyubaca-192x192.png",
+      "src": "hyubaca_192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "hyubaca-512x512.png",
+      "src": "hyubaca_512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

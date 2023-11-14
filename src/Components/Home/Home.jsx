@@ -1,5 +1,4 @@
 import React from "react";
-import '../../Styles/home.css';
 
 import Hero from "./Hero";
 import Problem from "./Problem";

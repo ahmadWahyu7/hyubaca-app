@@ -12,12 +12,12 @@ const Hero = () => {
         <div className="hero row row-cols-1 row-cols-md-2 pb-5">
             <div className={`col d-flex flex-column justify-content-center ${textPadding}`}>
                 <picture className={logoHyubaca}>
-                    <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/logo%2Flogo%20hyubaca%20new%20webp.webp?alt=media&token=f5b56779-cddb-444c-b861-1b5c7c045209" />
-                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/logo%2Flogo%20hyubaca%20new.png?alt=media&token=73944fb0-b3ff-46a2-a760-19fc00e526cb" alt="logo hyubaca" className="logo-hero"/>
+                    <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/logo%2Flogo%20hyubaca%20bg-white%20webp.webp?alt=media&token=afb1771c-4f75-4a79-862c-dc5c43b63a07" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/logo%2Flogo%20hyubaca%20bg-white.png?alt=media&token=84cad5e4-1cd3-4ac1-baaa-8d23a22a4099" alt="logo hyubaca" className="logo-hero"/>
                 </picture>
                 <h1 className={textClass}>Hyubaca</h1>
-                <p className={textClass}>Tempat kamu belajar berbagai materi dengan membaca komik</p>
-                <div className="toggle-btn-hero1">
+                <p className={textClass}>Ingin belajar Aplikasi Pengolah angka seperti Ms. Excel Namun sulit memahami fungsi dan rumus yang sering digunakan? Mari kita belajar memahami beberapa fungsi excel dengan membaca komik!</p>
+                <div className="toggle-btn-hero1 mt-3">
                     <Link to='/login' className="btn btn-primary btn-lg">Baca Sekarang</Link>
                 </div>
             </div>
