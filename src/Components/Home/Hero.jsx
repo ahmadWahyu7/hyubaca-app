@@ -16,7 +16,7 @@ const Hero = () => {
                     <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/logo%2Flogo%20hyubaca%20bg-white.png?alt=media&token=84cad5e4-1cd3-4ac1-baaa-8d23a22a4099" alt="logo hyubaca" className="logo-hero"/>
                 </picture>
                 <h1 className={textClass}>Hyubaca</h1>
-                <p className={textClass}>Ingin belajar Aplikasi Pengolah angka seperti Ms. Excel Namun sulit memahami fungsi dan rumus yang sering digunakan? Mari kita belajar memahami beberapa fungsi excel dengan membaca komik!</p>
+                <p className={textClass}>Belajar Materi tentang Aplikasi Pengolah angka seperti Ms. Excel dengan membaca komik!</p>
                 <div className="toggle-btn-hero1 mt-3">
                     <Link to='/login' className="btn btn-primary btn-lg">Baca Sekarang</Link>
                 </div>

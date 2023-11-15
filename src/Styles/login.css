@@ -1,5 +1,6 @@
 .login-bg {
-    background-color: var(--main-color);
+    background: var(--main-color) url('https://i.pinimg.com/564x/26/39/5f/26395ff7e1896dd9fce5154806f7c330.jpg') no-repeat center;
+    background-size: cover;
 }
 
 .login-card {

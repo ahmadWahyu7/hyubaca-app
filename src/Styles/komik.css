@@ -1,6 +1,7 @@
 /* DASHBOARD */
 .dashboard {
-    background-color: var(--main-color);
+    background: var(--main-color) url('https://i.pinimg.com/originals/4b/4d/17/4b4d17f848708e3bf6048d8334a3c13f.jpg') no-repeat center;
+    background-size: cover;
 }
 
 .container-bg {
