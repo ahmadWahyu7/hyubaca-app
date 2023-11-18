@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 import Comments from "./Comments";
 import Question from "./Question";
@@ -9,13 +8,21 @@ import ImagesArray from './ImagesArray';
 import AddComment from './AddComment';
 
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../Data/firebase';
+import { auth, db } from '../../Data/firebase';
+import { onAuthStateChanged } from "firebase/auth";
+import Swal from "sweetalert2";
+import BackButton from '../BackButton';
+
+import ScrollTop from '../../Assets/arrow-up-circle.svg';
 
 const Episode = () => {
     const { epsId } = useParams();
     const [listEpisodes, setLisEpisodes] = useState([]);
-    
     const listEpisodeRef = collection(db, "listepisode");
+
+    const [listPengguna, setListPengguna] = useState([]);
+    const penggunaRef = collection(db, 'pengguna');
+    const [emailUser, setEmailUser] = useState('');
 
     useEffect( () => {
         const getListEpisodes = async () => {
@@ -23,6 +30,22 @@ const Episode = () => {
             setLisEpisodes(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
         };
         getListEpisodes();
+
+        const getListPengguna = async () => {
+            const data = await getDocs(penggunaRef);
+            setListPengguna(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+        };
+        getListPengguna();
+
+        //cek status log in user
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setEmailUser(user.email);
+                console.log(user.email);
+            } else {
+                Swal.fire('Anda telah Log Out');
+            }
+        });
         // eslint-disable-next-line
     }, []);
 
@@ -34,23 +57,39 @@ const Episode = () => {
     const questionList = filterListEpisode.map(item => item.questions_eps).flat();
     const quizList = filterListEpisode.map(item => item.quiz_eps).flat();
     const commentsList = filterListEpisode.map(item => item.comments_eps).flat();
-    console.log(listEpisodes);
-    console.log("skip");
-    console.log(filterListEpisode);
+
+    //mendapatkan data user
+    const getUser = listPengguna.filter( item => item.email === emailUser);
+    const getNamaPanggil = getUser.map( item => item.nama_panggilan);
+    const getUserID = getUser.map( item => item.id);
+    const getListQuestionDone = getUser.map(item => {return item.isQuestionDone}).flat();
+    const epsQuestionDone = getListQuestionDone[intEpsParam-1];
+
+    console.log(epsQuestionDone);
+
+    //auto scroll ke atas ketika memilih episode
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    };
 
     return (
         <div>
-            <Link to="/dashboard" className='btn btn-outline-dark mt-2 ms-3'>kembali</Link>
+            <div className="position-relative">
+                <img src={ScrollTop} alt="scroll ke atas" onClick={scrollToTop} className='back-button me-3 opacity-50 position-fixed bottom-0 end-0 translate-middle-y'/>
+            </div>
+            <BackButton linkto={'/komik'} />
             <section>
-                <h2 className='text-center'>Episode {epsId}</h2>
+                <div className="full d-flex align-items-center justify-content-center">
+                    <h2>Episode {epsId}</h2>
+                </div>
                 <ImagesArray imageList={imageList1} />
-                <Question questionList={questionList} />
+                <Question questionList={questionList} idUser={getUserID} />
                 <ImagesArray imageList ={imageList2} />
                 <Quiz quizList={quizList} />
             </section>
             <section>
                 <h1 className='ms-3 mb-3'>Komentar</h1>
-                <AddComment intEpsParam={intEpsParam} />
+                <AddComment intEpsParam={intEpsParam} namaPanggil={getNamaPanggil} />
                 <Comments commentsList={commentsList} />
             </section>
         </div>

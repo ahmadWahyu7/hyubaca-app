@@ -4,6 +4,15 @@
     background-size: cover;
 }
 
+.dashboard h3 {
+    font-family: var(--main-font);
+}
+
+.dashboard-card {
+    text-decoration: none;
+    color: black;
+}
+
 .container-bg {
     background-color: white;
 }
@@ -12,8 +21,15 @@
     width: 90%;
 }
 
+.points h3 {
+    color: var(--secondary-color);
+}
+
 
 /* KOMIK */
+.list-eps h2 {
+    font-family: var(--title-comic);
+}
 .link-react {
     text-decoration: none;
 }

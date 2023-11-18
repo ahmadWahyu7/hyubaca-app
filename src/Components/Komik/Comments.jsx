@@ -10,15 +10,15 @@ const Comments = ({commentsList}) => {
 
     return (
         <div className="d-flex justify-content-center align-items-center flex-column">
-            <ul className="question-size list-group p-3"> 
+            <div className="question-size p-3"> 
                 {displayedComments.map((comment) => (
-                    <li key={comment.user_id} className="list-group-item">
-                        <h4>{comment.user_name}</h4>
-                        <span className="mb-1">{comment.user_time.toDate().toDateString()}</span>
-                        <p>{comment.user_comment}</p>
-                    </li>
+                    <div key={comment.user_id} className="border-secondary border-bottom ps-3 pt-3">
+                        <h4><b>{comment.user_name}</b></h4>
+                        <span><i>{comment.user_time.toDate().toDateString()}</i></span>
+                        <p className="mt-3">{comment.user_comment}</p>
+                    </div>
                 ))}
-            </ul>
+            </div>
             {commentsList.length > 3 && 
                 <button onClick={toggleComments} className="btn btn-outline-primary mb-5">
                     {showAllComments? 'Sembunyikan komentar' : 'Tampilkan Semua Komentar'}

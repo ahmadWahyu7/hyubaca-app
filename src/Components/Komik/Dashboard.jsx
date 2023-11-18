@@ -23,10 +23,8 @@ const Dashboard = () => {
           });
     };
 
-    //fitur points
-    // const [points, setPoints] = useState(0);
     const [listPengguna, setListPengguna] = useState([]);
-    const penggunaRef = collection(db, 'pengguna', );
+    const penggunaRef = collection(db, 'pengguna');
     const [emailUser, setEmailUser] = useState('');
 
     useEffect(() => {
@@ -36,10 +34,9 @@ const Dashboard = () => {
         };
         getList();
 
+        //cek status log in user
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                Swal.fire('Login berhasil');
-                console.log(user.email);
                 setEmailUser(user.email);
             } else {
                 Swal.fire('Anda telah Log Out');
@@ -49,24 +46,40 @@ const Dashboard = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
-    const getTap = listPengguna?.filter( item => item.email === emailUser) || [];
+    const getUser = listPengguna?.filter( item => item.email === emailUser) || [];
+    console.log(getUser);
 
     return (
-        <div className='dashboard full d-flex align-items-center justify-content-end flex-column'>
-            <div className="points d-flex bg-white p-3 mx-3 rounded shadow mb-3">
+        <div className='dashboard full d-flex align-items-center justify-content-start flex-column'>
+            <h3 className="text-white text-center mb-auto pt-5">Selamat datang,<br />Semoga harimu menyenangkan</h3>
+            <div className="points d-flex bg-white p-2 mx-3 rounded shadow mb-3">
                 <h3>My Points</h3>
-                {getTap.map((item)=> (
-                    <h3 className="ms-auto" key={item.id}>{item.poin}</h3>
-                ))}
+                {getUser.map((item)=> (<h3 className="ms-auto" key={item.id}>{item.poin}</h3>))}
             </div>
-            <div className="card-dashboard row bg-white shadow rounded mx-3 p-3 mb-3">
-                <picture className="col-5">
+            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-3" to='/komik'>
+                <picture className="col-4 p-2">
                     <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fmulaibelajar-pointilisme-webp.webp?alt=media&token=3f8bbc75-7aca-4b6f-8a72-39ed67579193" />
                     <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fmulaibelajar-pointilisme.png?alt=media&token=d8fd2273-e8fa-4f1f-816c-596a5b2fd60e" alt="mulai belajar icon" className="img-fluid"/>
                 </picture>
-                <div className="col-7">
-                <Link to="/komik" className="">Mulai Baca Komik</Link></div>
-            </div>
+                <div className="col-8 ps-1 d-flex align-items-center">
+                    <div>
+                        <h3>Mulai Belajar Yuk!</h3>
+                        <p>Baca Cerita Komik tentang Microsoft Excel</p>
+                    </div>
+                </div>
+            </Link>
+            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-3" to='/komik'>
+                <picture className="col-4 p-2">
+                    <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fmulaibelajar-pointilisme-webp.webp?alt=media&token=3f8bbc75-7aca-4b6f-8a72-39ed67579193" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fmulaibelajar-pointilisme.png?alt=media&token=d8fd2273-e8fa-4f1f-816c-596a5b2fd60e" alt="mulai belajar icon" className="img-fluid"/>
+                </picture>
+                <div className="col-8 ps-1 d-flex align-items-center">
+                    <div>
+                        <h3>Mulai Tes Yuk!</h3>
+                        <p>Apakah dirimu paham ??</p>
+                    </div>
+                </div>
+            </Link>
             <div className="card-dashboard mb-5">
                 <button className="btn btn-danger btn-width" onClick={handleLogout}>Log out</button>
             </div>

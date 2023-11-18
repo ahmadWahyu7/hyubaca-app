@@ -4,9 +4,8 @@ import { Timestamp, arrayUnion, doc, updateDoc } from "firebase/firestore";
 
 import { v4 as uuidv4 } from 'uuid';
 
-const AddComment = ({intEpsParam}) => {
+const AddComment = ({intEpsParam, namaPanggil}) => {
     const [komentarBaru, setKomentarBaru] = useState('');
-    const [namaKomentarBaru, setNamaKomentarBaru] = useState('');
 
     const dataNamaEpisode = [
         {id: 0, nama_eps: "eps00Prolog"},
@@ -34,7 +33,7 @@ const AddComment = ({intEpsParam}) => {
         try {
           await updateDoc(listRef, { comments_eps : arrayUnion({
             user_id : `0${idFilter}user_${uniqueId}`,
-            user_name : namaKomentarBaru,
+            user_name : namaPanggil,
             user_time : Timestamp.fromDate(currentDate),
             user_comment : komentarBaru
             })
@@ -44,25 +43,12 @@ const AddComment = ({intEpsParam}) => {
           console.log(error)
         }
         setKomentarBaru('');
-        setNamaKomentarBaru('');
     }
 
     return (
         <div className="mb-3">
             <form className="px-3">
                 <div className="mb-3">
-                    <label htmlFor="inputNamaKomentar" className="form-label fw-bold">Nama</label>
-                    <input 
-                    type="text" 
-                    className="form-control" 
-                    id="inputNamaKomentar" 
-                    aria-describedby="input nama komentar"
-                    value={namaKomentarBaru}
-                    onChange={(e)=> setNamaKomentarBaru(e.target.value)}
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputIsiKomentar" className="form-label fw-bold">Komentar</label>
                     <input 
                     type="text" 
                     className="form-control" 
