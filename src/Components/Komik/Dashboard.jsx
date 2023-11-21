@@ -47,7 +47,6 @@ const Dashboard = () => {
     },[]);
 
     const getUser = listPengguna?.filter( item => item.email === emailUser) || [];
-    console.log(getUser);
 
     return (
         <div className='dashboard full d-flex align-items-center justify-content-start flex-column'>

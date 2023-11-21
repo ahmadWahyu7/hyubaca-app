@@ -37,42 +37,45 @@ const LoginMobile = () => {
       };
 
     return (
-        <div className="full p-3 d-flex align-items-end">
-            <form onSubmit={handleLogin} className="p-3 login-card text-center">
-                    <h1>Masuk dengan Email</h1>
-                    <div className="mt-3 mb-3">
-                        <label htmlFor="loginEmail" className="form-label">Alamat Email</label>
-                        <input 
-                            type="email" 
-                            className="form-control" 
-                            id="loginEmail" 
-                            aria-describedby="emailLogin"
-                            placeholder="Masukan Alamat Email ..."
-                            value={email}
-                            onChange={(e)=> setEmail(e.target.value)} />
-                    </div>
+        <div className="p-3">
+            <picture>
+                <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Flogin-image-webp.webp?alt=media&token=a11c0f54-3a90-429a-8414-596a26674f59" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Flogin-image.png?alt=media&token=5b4dfe0f-181e-456e-a3b3-a26349e60749" alt="gambar login" className="img-fluid" />
+            </picture>
+            <form onSubmit={handleLogin} className="px-3 pb-3 login-card text-center">
+                <div className="mt-3 mb-3">
+                    <label htmlFor="loginEmail" className="form-label">Alamat Email</label>
+                    <input 
+                        type="email" 
+                        className="form-control" 
+                        id="loginEmail" 
+                        aria-describedby="emailLogin"
+                        placeholder="Masukan Alamat Email ..."
+                        value={email}
+                        onChange={(e)=> setEmail(e.target.value)} />
+                </div>
+                <div className="input-group mb-3">
                     <label htmlFor="loginPassword" className="form-label">Kata Sandi</label>
-                    <div className="input-group mb-3">
-                        <input 
-                            type={toggleShow}
-                            id="loginPassword" 
-                            className="form-control" 
-                            placeholder="Masukan Kata Sandi ..." 
-                            aria-label="Masukan Kata Sandi ..." 
-                            aria-describedby="loginPassword2"
-                            value={password}
-                            onChange={(e)=> setPassword(e.target.value)} />
-                        <button 
-                            className="btn btn-outline-secondary" 
-                            type="button" 
-                            id="loginPassword2" 
-                            onClick={handleShowPassword}>
-                            <img src={toggleTextPassword} alt="toggleEye" />
-                        </button>
-                    </div>
-                    <button type="submit" className="btn btn-primary mb-3">MASUK</button>
-                    <p>Belum memiliki Akun ? <strong> <Link to='/register'>Daftar di sini</Link> </strong></p>
-                </form>
+                    <input 
+                        type={toggleShow}
+                        id="loginPassword" 
+                        className="form-control" 
+                        placeholder="Masukan Kata Sandi ..." 
+                        aria-label="Masukan Kata Sandi ..." 
+                        aria-describedby="loginPassword2"
+                        value={password}
+                        onChange={(e)=> setPassword(e.target.value)} />
+                    <button 
+                        className="btn btn-outline-secondary" 
+                        type="button" 
+                        id="loginPassword2" 
+                        onClick={handleShowPassword}>
+                        <img src={toggleTextPassword} alt="toggleEye" />
+                    </button>
+                </div>
+                <button type="submit" className="btn btn-primary mb-3">MASUK</button>
+                <p>Belum memiliki Akun ? <strong> <Link to='/register'>Daftar di sini</Link> </strong></p>
+            </form>
         </div>
     )
 };

@@ -51,10 +51,10 @@ const RegisterDesktop = () => {
     return (
         <div className="row row-cols-1 row-cols-md-2 login-bg">
             <div className='col p-5'>
-                <img src="https://github.com/ahmadWahyu7/data-gambar/blob/main/hyubaca-assets/login-assets/aset-login-02-register.png?raw=true" 
-                alt="gambar sekretaris sedang menulis"
-                loading="lazy" 
-                className="img-fluid animasi-hero" />
+                <picture>
+                    <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image-webp.webp?alt=media&token=1e5656ca-0f64-411b-8661-6e155f00fba8" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image.png?alt=media&token=d0ed90ee-d07d-45aa-8363-8d2474e8dfc9" alt="gambar register" className="img-fluid animasi-hero" />
+                </picture>
             </div>
             <div className='col d-flex align-items-center p-5'>
                 <form onSubmit={handleRegister} className="p-3 pb-5 login-card text-center">

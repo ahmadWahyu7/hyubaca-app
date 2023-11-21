@@ -44,10 +44,10 @@ const LoginDesktop = () => {
     return (
         <div className="row full">
             <div className='col-5 d-flex justify-content-center align-items-center'>
-                <img src="https://github.com/ahmadWahyu7/data-gambar/blob/main/hyubaca-assets/login-assets/aset-login-03-login.png?raw=true" 
-                alt="gambar orang masuk pintu log in"
-                loading="lazy" 
-                className="img-fluid" />
+                <picture>
+                    <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Flogin-image-webp.webp?alt=media&token=a11c0f54-3a90-429a-8414-596a26674f59" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Flogin-image.png?alt=media&token=5b4dfe0f-181e-456e-a3b3-a26349e60749" alt="gambar login" className="img-fluid" />
+                </picture>
             </div>
             <div className='col-7 p-5 d-flex align-items-center'>
                 <form onSubmit={handleLogin} className="p-3 pb-5 login-card text-center">

@@ -75,8 +75,12 @@ const RegisterMobile = () => {
     };
 
     return (
-        <div className="full p-3 d-flex align-items-end">
-            <form onSubmit={handleRegister} className="p-3 login-card">
+        <div className="p-3">
+            <picture>
+                <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image-webp.webp?alt=media&token=1e5656ca-0f64-411b-8661-6e155f00fba8" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image.png?alt=media&token=d0ed90ee-d07d-45aa-8363-8d2474e8dfc9" alt="gambar register" className="img-fluid animasi-hero" />
+            </picture>
+            <form onSubmit={handleRegister} className="px-3 pb-3 login-card">
                 <h1>DAFTAR AKUN</h1>
                 <div className="mt-3 mb-3">
                     <label htmlFor="namaLengkap" className="form-label">Nama Lengkap</label>
@@ -126,11 +130,12 @@ const RegisterMobile = () => {
                         className="btn btn-outline-secondary" 
                         type="button" 
                         id="loginPassword2" 
-                        onClick={handleShowPassword}>{toggleTextPassword}
+                        onClick={handleShowPassword}>
+                            <img src={toggleTextPassword} alt="toggleEye" />
                         </button>
                 </div>
                 <button type="submit" className="btn btn-primary">Daftar</button>
-                <p>Sudah memiliki Akun ? <strong> <Link to='/register'>Login di sini</Link> </strong></p>
+                <p>Sudah memiliki Akun ? <strong> <Link to='/login'>Login di sini</Link> </strong></p>
             </form>
         </div>
     )

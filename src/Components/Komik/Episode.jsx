@@ -54,18 +54,14 @@ const Episode = () => {
 
     const imageList1 = filterListEpisode.map(item => item.images_eps).flat();
     const imageList2 = filterListEpisode.map(item => item.images_eps2).flat();
-    const questionList = filterListEpisode.map(item => item.questions_eps).flat();
-    const quizList = filterListEpisode.map(item => item.quiz_eps).flat();
     const commentsList = filterListEpisode.map(item => item.comments_eps).flat();
 
     //mendapatkan data user
     const getUser = listPengguna.filter( item => item.email === emailUser);
     const getNamaPanggil = getUser.map( item => item.nama_panggilan);
     const getUserID = getUser.map( item => item.id);
-    const getListQuestionDone = getUser.map(item => {return item.isQuestionDone}).flat();
-    const epsQuestionDone = getListQuestionDone[intEpsParam-1];
-
-    console.log(epsQuestionDone);
+    const getListAllQuestionDone = getUser.map(item => {return item.is_question_done}).flat();
+    const getListAllQuizDone = getUser.map(item => {return item.is_quiz_done}).flat();
 
     //auto scroll ke atas ketika memilih episode
     const scrollToTop = () => {
@@ -83,9 +79,9 @@ const Episode = () => {
                     <h2>Episode {epsId}</h2>
                 </div>
                 <ImagesArray imageList={imageList1} />
-                <Question questionList={questionList} idUser={getUserID} />
+                <Question idUser={getUserID} epsId={epsId} getAll={getListAllQuestionDone} />
                 <ImagesArray imageList ={imageList2} />
-                <Quiz quizList={quizList} />
+                <Quiz idUser={getUserID} epsId={epsId} getAll={getListAllQuizDone} />
             </section>
             <section>
                 <h1 className='ms-3 mb-3'>Komentar</h1>
