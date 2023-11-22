@@ -2,20 +2,14 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../Data/firebase";
+import eyeFill from '../../Assets/eye-fill.svg';
+import eyeSlash from '../../Assets/eye-slash.svg';
 
 const LoginDesktop = () => {
     // fungsi untuk menampilkan password
     const [showPassword, setShowPassword] = useState(false);
     const toggleShow = showPassword ? 'text' : 'password';
-    const toggleTextPassword = showPassword ? 
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-eye-fill" viewBox="0 0 16 16">
-            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-        </svg> 
-    :   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-eye-slash-fill" viewBox="0 0 16 16">
-            <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
-            <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
-        </svg>;
+    const toggleTextPassword = showPassword ? eyeFill : eyeSlash;
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -42,11 +36,11 @@ const LoginDesktop = () => {
       };
 
     return (
-        <div className="row full">
+        <div className="row">
             <div className='col-5 d-flex justify-content-center align-items-center'>
                 <picture>
                     <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Flogin-image-webp.webp?alt=media&token=a11c0f54-3a90-429a-8414-596a26674f59" />
-                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Flogin-image.png?alt=media&token=5b4dfe0f-181e-456e-a3b3-a26349e60749" alt="gambar login" className="img-fluid" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Flogin-image.png?alt=media&token=5b4dfe0f-181e-456e-a3b3-a26349e60749" alt="gambar login" className="img-fluid height-100 animasi-hero" />
                 </picture>
             </div>
             <div className='col-7 p-5 d-flex align-items-center'>
@@ -78,7 +72,8 @@ const LoginDesktop = () => {
                             className="btn btn-outline-secondary" 
                             type="button" 
                             id="loginPassword2" 
-                            onClick={handleShowPassword}>{toggleTextPassword}
+                            onClick={handleShowPassword}>
+                                <img src={toggleTextPassword} alt="toggleEye" />
                         </button>
                     </div>
                     <button type="submit" className="btn btn-primary mb-3">MASUK</button>

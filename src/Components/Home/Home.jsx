@@ -16,7 +16,6 @@ const Home = () => {
             <Solution />
             <AboutMe />
             </div>
-            <Hero />
             <Footer />
         </div>
     )

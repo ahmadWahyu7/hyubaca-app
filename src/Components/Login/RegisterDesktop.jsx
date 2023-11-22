@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../Data/firebase";
 
 import { db } from "../../Data/firebase";
 import { addDoc, collection } from "firebase/firestore";
 
+import eyeFill from '../../Assets/eye-fill.svg';
+import eyeSlash from '../../Assets/eye-slash.svg';
 const RegisterDesktop = () => {
     // fungsi untuk menampilkan password
     const [showPassword, setShowPassword] = useState(false);
     const toggleShow = showPassword ? 'text' : 'password';
-    const toggleTextPassword = showPassword ? 'Tutup' : 'Lihat';
+    const toggleTextPassword = showPassword ? eyeFill : eyeSlash;
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -49,14 +51,14 @@ const RegisterDesktop = () => {
     };
 
     return (
-        <div className="row row-cols-1 row-cols-md-2 login-bg">
-            <div className='col p-5'>
+        <div className="row">
+            <div className='col-5 d-flex justify-content-center align-items-center'>
                 <picture>
                     <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image-webp.webp?alt=media&token=1e5656ca-0f64-411b-8661-6e155f00fba8" />
-                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image.png?alt=media&token=d0ed90ee-d07d-45aa-8363-8d2474e8dfc9" alt="gambar register" className="img-fluid animasi-hero" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image.png?alt=media&token=d0ed90ee-d07d-45aa-8363-8d2474e8dfc9" alt="gambar register" className="img-fluid height-100 animasi-hero" />
                 </picture>
             </div>
-            <div className='col d-flex align-items-center p-5'>
+            <div className='col-7 p-5 d-flex align-items-center'>
                 <form onSubmit={handleRegister} className="p-3 pb-5 login-card text-center">
                     <h1>DAFTAR AKUN</h1>
                     <div className="mt-3 mb-3">
@@ -96,10 +98,12 @@ const RegisterDesktop = () => {
                             className="btn btn-outline-secondary" 
                             type="button" 
                             id="loginPassword2" 
-                            onClick={handleShowPassword}>{toggleTextPassword}
+                            onClick={handleShowPassword}>
+                                <img src={toggleTextPassword} alt="toggleEye" />
                          </button>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
+                    <p>Sudah memiliki Akun ? <strong> <Link to='/login'>Login di sini</Link> </strong></p>
                 </form>
             </div>
         </div>

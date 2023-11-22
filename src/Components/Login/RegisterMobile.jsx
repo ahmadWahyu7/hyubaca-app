@@ -15,7 +15,7 @@ const RegisterMobile = () => {
     // fungsi untuk menampilkan password
     const [showPassword, setShowPassword] = useState(false);
     const toggleShow = showPassword ? 'text' : 'password';
-    const toggleTextPassword = showPassword ? eyeSlash : eyeFill ;
+    const toggleTextPassword = showPassword ? eyeFill : eyeSlash ;
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -78,12 +78,11 @@ const RegisterMobile = () => {
         <div className="p-3">
             <picture>
                 <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image-webp.webp?alt=media&token=1e5656ca-0f64-411b-8661-6e155f00fba8" />
-                <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image.png?alt=media&token=d0ed90ee-d07d-45aa-8363-8d2474e8dfc9" alt="gambar register" className="img-fluid animasi-hero" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fregister-image.png?alt=media&token=d0ed90ee-d07d-45aa-8363-8d2474e8dfc9" alt="gambar register" className="img-fluid" />
             </picture>
-            <form onSubmit={handleRegister} className="px-3 pb-3 login-card">
+            <form onSubmit={handleRegister} className="px-3 pb-3 login-card text-center">
                 <h1>DAFTAR AKUN</h1>
-                <div className="mt-3 mb-3">
-                    <label htmlFor="namaLengkap" className="form-label">Nama Lengkap</label>
+                <div className="pt-3 mb-3">
                     <input 
                         type="text"
                         className="form-control"
@@ -94,7 +93,6 @@ const RegisterMobile = () => {
                         onChange={(e)=> setNamaLengkapPengguna(e.target.value)} />
                 </div>
                 <div className="mt-3 mb-3">
-                    <label htmlFor="namaLengkap" className="form-label">Nama Panggilan</label>
                     <input 
                         type="text"
                         className="form-control"
@@ -105,7 +103,6 @@ const RegisterMobile = () => {
                         onChange={(e)=> setNamaPanggilanPengguna(e.target.value)} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="loginEmail" className="form-label">Alamat Email</label>
                     <input 
                         type="email" 
                         className="form-control" 
@@ -115,7 +112,6 @@ const RegisterMobile = () => {
                         value={emailPengguna} 
                         onChange={(e)=> setEmailPengguna(e.target.value)}/>
                 </div>
-                <label htmlFor="loginPassword" className="form-label">Kata Sandi</label>
                 <div className="input-group mb-3">
                     <input 
                         type={toggleShow}

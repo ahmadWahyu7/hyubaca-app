@@ -14,6 +14,7 @@ import Swal from "sweetalert2";
 import BackButton from '../BackButton';
 
 import ScrollTop from '../../Assets/arrow-up-circle.svg';
+import Navigation from './Navigation';
 
 const Episode = () => {
     const { epsId } = useParams();
@@ -82,6 +83,7 @@ const Episode = () => {
                 <Question idUser={getUserID} epsId={epsId} getAll={getListAllQuestionDone} />
                 <ImagesArray imageList ={imageList2} />
                 <Quiz idUser={getUserID} epsId={epsId} getAll={getListAllQuizDone} />
+                <Navigation epsId={intEpsParam} />
             </section>
             <section>
                 <h1 className='ms-3 mb-3'>Komentar</h1>

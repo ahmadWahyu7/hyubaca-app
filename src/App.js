@@ -13,6 +13,7 @@ import SumberAset from './Components/Home/SumberAset';
 import Dashboard from './Components/Komik/Dashboard';
 import Komik from './Components/Komik/Komik';
 import Episode from './Components/Komik/Episode';
+import LihatEnding from './Components/Komik/LihatEnding';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/register' element={<Register />} />
 
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/lihatending' element={<LihatEnding />} />
           <Route path='/komik' element={<Komik />} />
           <Route path='/komik/:epsId' element={<Episode />} />
         </Routes>
