@@ -1,6 +1,22 @@
 /* DASHBOARD */
+
 .dashboard {
-    background: var(--main-color) url('https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fbghyubaca%20(2).jpg?alt=media&token=d38cccbc-79ce-4938-b28e-1ff2a84a82f1') no-repeat center;
+    background-color: #3F91A6;
+}
+
+.dashboard h2 {
+    margin-bottom: 0;
+}
+
+.dashboard .bg-sky {
+    background-color: #59BDD5;
+    font-family: var(--main-font);
+}
+
+header {
+    height: 70vh;
+    width: auto;
+    background: var(--main-color) url(https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fbghyubacamobile.jpg?alt=media&token=2360e4e2-2ac0-4b4b-8cba-63f7bdcc7f1f) no-repeat top;
     background-size: cover;
 }
 

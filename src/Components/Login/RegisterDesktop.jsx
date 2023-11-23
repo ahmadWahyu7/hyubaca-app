@@ -6,9 +6,12 @@ import { auth } from "../../Data/firebase";
 
 import { db } from "../../Data/firebase";
 import { addDoc, collection } from "firebase/firestore";
+import { defaultQuestionData, defaultQuizData } from "../../Data/data-default";
 
 import eyeFill from '../../Assets/eye-fill.svg';
 import eyeSlash from '../../Assets/eye-slash.svg';
+import Swal from "sweetalert2";
+
 const RegisterDesktop = () => {
     // fungsi untuk menampilkan password
     const [showPassword, setShowPassword] = useState(false);
@@ -23,30 +26,40 @@ const RegisterDesktop = () => {
     const userRef = collection(db, "pengguna");
 
     // fungsi register
-    const [namaUser, setNama] = useState('');
-    const [emailUser, setEmail] = useState('');
+    const [namaLengkapPengguna, setNamaLengkapPengguna] = useState('');
+    const [namaPanggilanPengguna, setNamaPanggilanPengguna] = useState('');
+    const [emailPengguna, setEmailPengguna] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
     const handleRegister = async (e) => {
         e.preventDefault();
         
-        await createUserWithEmailAndPassword(auth, emailUser, password)
-        .then((userCredential) => {
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, emailPengguna, password)
             // Berhasil mendaftar
             const user = userCredential.user;
             console.log(user);
-            alert('berhasil');
+            Swal.fire('Berhasil Mendaftar!')
+            //menyimpan data user ke storage
+            await addDoc(userRef, {
+                nama_lengkap: namaLengkapPengguna,
+                nama_panggilan: namaPanggilanPengguna,
+                email: emailPengguna,
+                password: password,
+                poin: 1000,
+                isQuestionDone : defaultQuestionData,
+                isQuizDone : defaultQuizData,
+            });
             navigate('/login');
-        })
-        .catch((error) => {
+        } catch (error) {
             // Gagal mendaftar
             console.error(error);
-        });
+        }
 
-        await addDoc(userRef, {nama_lengkap: namaUser, email: emailUser, password: password, poin: 6000});
-        setNama('');
-        setEmail('');
+        setNamaLengkapPengguna('');
+        setNamaPanggilanPengguna('');
+        setEmailPengguna('');
         setPassword('');
     };
 
@@ -61,29 +74,36 @@ const RegisterDesktop = () => {
             <div className='col-7 p-5 d-flex align-items-center'>
                 <form onSubmit={handleRegister} className="p-3 pb-5 login-card text-center">
                     <h1>DAFTAR AKUN</h1>
-                    <div className="mt-3 mb-3">
-                        <label htmlFor="namaLengkap" className="form-label">Nama Lengkap</label>
+                    <div className="pt-3 mb-3">
                         <input 
                             type="text"
                             className="form-control"
                             id="namaLengkap"
                             aria-describedby="lengkapNama"
                             placeholder="Masukan nama lengkap . . . " 
-                            value={namaUser}
-                            onChange={(e)=> setNama(e.target.value)} />
+                            value={namaLengkapPengguna}
+                            onChange={(e)=> setNamaLengkapPengguna(e.target.value)} />
+                    </div>
+                    <div className="mt-3 mb-3">
+                        <input 
+                            type="text"
+                            className="form-control"
+                            id="namaPanggilan"
+                            aria-describedby="PanggilanNama"
+                            placeholder="Masukan nama Panggilan . . . " 
+                            value={namaPanggilanPengguna}
+                            onChange={(e)=> setNamaPanggilanPengguna(e.target.value)} />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="loginEmail" className="form-label">Alamat Email</label>
                         <input 
                             type="email" 
                             className="form-control" 
                             id="loginEmail" 
                             aria-describedby="emailLogin"
                             placeholder="Masukan Alamat Email ..." 
-                            value={emailUser} 
-                            onChange={(e)=> setEmail(e.target.value)}/>
+                            value={emailPengguna} 
+                            onChange={(e)=> setEmailPengguna(e.target.value)}/>
                     </div>
-                    <label htmlFor="loginPassword" className="form-label">Kata Sandi</label>
                     <div className="input-group mb-3">
                         <input 
                             type={toggleShow}
@@ -100,9 +120,9 @@ const RegisterDesktop = () => {
                             id="loginPassword2" 
                             onClick={handleShowPassword}>
                                 <img src={toggleTextPassword} alt="toggleEye" />
-                         </button>
+                            </button>
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Daftar</button>
                     <p>Sudah memiliki Akun ? <strong> <Link to='/login'>Login di sini</Link> </strong></p>
                 </form>
             </div>

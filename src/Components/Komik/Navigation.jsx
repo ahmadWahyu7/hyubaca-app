@@ -22,13 +22,19 @@ const Navigation = ({epsId}) => {
         return `/komik`;
         }
     };
+
+    //auto scroll ke atas ketika memilih episode
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    };
+
         return (
-            <div className="row">
-                <Link to={getPrevPath()} className="col btn btn-secondary m-1 d-flex justify-content-center align-items-center">
+            <div className="row mb-5">
+                <Link to={getPrevPath()} className="col btn btn-secondary m-1 d-flex justify-content-center align-items-center" onClick={scrollToTop}>
                     <img src={iconPrev} alt="icon previous" className="me-1"/>
                     Prev
                 </Link>
-                <Link to={getNextPath()} className="col btn btn-success m-1 d-flex justify-content-center align-items-center">
+                <Link to={getNextPath()} className="col btn btn-success m-1 d-flex justify-content-center align-items-center" onClick={scrollToTop}>
                     Next
                     <img src={iconNext} alt="icon next" className="ms-1"/>
                 </Link>

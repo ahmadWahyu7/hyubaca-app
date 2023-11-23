@@ -13,6 +13,7 @@ const Quiz = ({ idUser, epsId, getAll }) => {
     const startQuiz = async () => {
         setIsQuizStarted(true);
 
+        // update array user
         const updateAllQuiz = getAll.map(item => {
             if (item.id === `quizdone${epsId}`) {
                 return {...item, is_done: true};
@@ -27,7 +28,14 @@ const Quiz = ({ idUser, epsId, getAll }) => {
         } catch (error) {
             console.log(error);
         }
- 
+
+        //menambahkan poin jika benar
+        // if (opsi.is_correct === true) {
+        //     Swal.fire('Jawabanmu Benar!');
+        //     await updateDoc(userRef,{ poin: increment(1000) });
+        // } else {
+        //     Swal.fire('Jawabanmu Salah!');
+        // }
     };
 
     return (
@@ -62,10 +70,9 @@ const Quiz = ({ idUser, epsId, getAll }) => {
                             <h1 className="modal-title fs-5" id="staticBackdropLabel">Kuis Matematika</h1>
                         </div>
                         <div className="modal-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident ea praesentium autem inventore laboriosam magni dolorum ad quas fugit placeat dolor facilis eveniet totam expedita quibusdam molestiae, animi at incidunt hic tempora culpa? Explicabo, perspiciatis repellendus sequi beatae natus, animi fugiat distinctio eligendi dignissimos exercitationem delectus officia! Molestias commodi velit cumque, rem eaque repellat fuga enim aut non tenetur porro libero totam corporis dicta ullam sunt maxime tempore error nesciunt est ea quidem. Nulla ipsa eveniet, non neque accusantium velit labore fuga corrupti sed tempora soluta nobis numquam, nisi omnis ad aspernatur dolores atque iste! Ut laboriosam omnis sit, error et voluptates eligendi porro repudiandae iusto reiciendis libero rem expedita non consectetur perferendis excepturi minus possimus aut sed. Maiores vero at dicta atque alias, quasi nesciunt. Eligendi eius ipsum veritatis, quaerat nihil velit laboriosam harum nostrum optio expedita nam excepturi sed dolore alias commodi sequi nemo fugit ea delectus dolor ad ullam vel incidunt? Excepturi ipsa adipisci repellat perferendis earum reprehenderit. Et aliquam, quia, quae sapiente suscipit, commodi quis magnam necessitatibus recusandae voluptatum consequuntur facilis dicta! Praesentium vero expedita modi enim fuga alias possimus, dignissimos unde deleniti magni odit, et aspernatur quasi facere sunt obcaecati doloremque? Ut reprehenderit asperiores id, soluta ab maiores cum ipsa dolore cupiditate provident accusamus reiciendis sapiente nulla ipsum ducimus, numquam voluptatum iusto dolorum, repellendus illum placeat quae veniam. Magni delectus, nihil totam saepe quam esse in debitis dicta cum. Et, veritatis fugiat! Magnam quidem similique consequatur ab vel temporibus voluptate impedit nemo repudiandae eligendi animi in aut natus nam excepturi esse numquam, nesciunt nihil enim minus libero quam? Esse nisi natus, quaerat voluptates eligendi nulla omnis eos. Odit voluptatem quos ea earum, nostrum saepe, illum itaque quod reiciendis error, dicta eius et quo voluptates modi architecto ipsa quisquam perferendis aspernatur nisi? Accusantium quis quo dolore.
+                            soal soal
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" className="btn btn-primary">Kirim</button>
                         </div>
                         </div>

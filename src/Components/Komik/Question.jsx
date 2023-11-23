@@ -39,7 +39,7 @@ const Question = ({idUser, epsId, getAll}) => {
         //menambahkan poin jika benar
         if (opsi.is_correct === true) {
             Swal.fire('Jawabanmu Benar!');
-            await updateDoc(userRef,{ poin: increment(100) });
+            await updateDoc(userRef,{ poin: increment(500) });
         } else {
             Swal.fire('Jawabanmu Salah!');
         }
@@ -50,7 +50,7 @@ const Question = ({idUser, epsId, getAll}) => {
             {isQuestionDone? (
                 <div></div>
             ) : (
-                <div className="question-size text-center p-3">
+                <div className="question-size text-center p-3 shadow">
                     <div className="bg-primary rounded-3 p-3">
                         <h3 className="py-2 px-5 mb-5 text-white fw-bold">Pertanyaan</h3>
                         {getListQuestion.map((item) => (

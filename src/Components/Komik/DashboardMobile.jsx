@@ -50,13 +50,16 @@ const DashboardMobile = () => {
     const getUser = listPengguna?.filter( item => item.email === emailUser) || [];
 
     return (
-        <div className='dashboard full d-flex align-items-center justify-content-start flex-column'>
-            <h3 className="text-white text-center mb-auto pt-5">Selamat datang,<br />Semoga harimu menyenangkan</h3>
-            <div className="points d-flex bg-white p-2 mx-3 rounded shadow mb-3">
-                <h3>My Points</h3>
-                {getUser.map((item)=> (<h3 className="ms-auto  text-warning" key={item.id}>{item.poin} points</h3>))}
-            </div>
-            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-2" to='/komik'>
+        <div className='dashboard'>
+            <h2 className="text-navy text-center pt-3 pb-2 bg-sky">DASHBOARD</h2>
+            <header className="d-flex flex-column align-items-center justify-content-end">
+                <h3 className="text-white text-center pt-4">Selamat datang,<br />Semoga harimu menyenangkan</h3>
+                <div className="points d-flex bg-white p-2 mt-auto rounded shadow mb-3">
+                    <h3>My Points</h3>
+                    {getUser.map((item)=> (<h3 className="ms-auto text-warning" key={item.id}>{item.poin} points</h3>))}
+                </div>
+            </header>
+            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-3" to='/komik'>
                 <picture className="col-4 p-2">
                     <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2FMulaiBelajar.png?alt=media&token=969c2a03-ba81-4940-9cdb-71daa7fc9e1c" />
                     <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fmulaibelajar-pointilisme.png?alt=media&token=d8fd2273-e8fa-4f1f-816c-596a5b2fd60e" alt="mulai belajar icon" className="img-fluid"/>
@@ -68,7 +71,7 @@ const DashboardMobile = () => {
                     </div>
                 </div>
             </Link>
-            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-2" to='/komik'>
+            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-3" to='/komik'>
                 <picture className="col-4 p-2">
                     <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2FMulaiTes.png?alt=media&token=6472beb5-6ae4-4278-8d37-47d63fe78c21" />
                     <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fmulaibelajar-pointilisme.png?alt=media&token=d8fd2273-e8fa-4f1f-816c-596a5b2fd60e" alt="mulai belajar icon" className="img-fluid"/>
@@ -80,7 +83,7 @@ const DashboardMobile = () => {
                     </div>
                 </div>
             </Link>
-            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-2" to='/komik'>
+            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-3" to='/komik'>
                 <picture className="col-4 p-2">
                     <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2FLihatEnding.png?alt=media&token=86b154ff-673b-43ae-a5f0-cb4afd4774e9" />
                     <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fmulaibelajar-pointilisme.png?alt=media&token=d8fd2273-e8fa-4f1f-816c-596a5b2fd60e" alt="mulai belajar icon" className="img-fluid"/>
@@ -92,8 +95,8 @@ const DashboardMobile = () => {
                     </div>
                 </div>
             </Link>
-            <div className="card-dashboard mb-5">
-                <button className="btn btn-danger btn-width ms-2" onClick={handleLogout}>
+            <div className="card-dashboard text-center pb-5">
+                <button className="btn btn-danger btn-width" onClick={handleLogout}>
                     <img src={power} alt="power icon" className="me-1"/>
                     Log out
                 </button>

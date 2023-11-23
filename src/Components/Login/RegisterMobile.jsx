@@ -6,8 +6,9 @@ import { auth } from "../../Data/firebase";
 
 import { db } from "../../Data/firebase";
 import { addDoc, collection } from "firebase/firestore";
-import Swal from "sweetalert2";
+import { defaultQuestionData, defaultQuizData } from "../../Data/data-default";
 
+import Swal from "sweetalert2";
 import eyeFill from '../../Assets/eye-fill.svg';
 import eyeSlash from '../../Assets/eye-slash.svg';
 
@@ -40,7 +41,6 @@ const RegisterMobile = () => {
             const user = userCredential.user;
             console.log(user);
             Swal.fire('Berhasil Mendaftar!')
-            navigate('/login');
             //menyimpan data user ke storage
             await addDoc(userRef, {
                 nama_lengkap: namaLengkapPengguna,
@@ -48,25 +48,14 @@ const RegisterMobile = () => {
                 email: emailPengguna,
                 password: password,
                 poin: 1000,
-                isQuestion1Done : false,
-                isQuestion2Done : false,
-                isQuestion3Done : false,
-                isQuestion4Done : false,
-                isQuestion5Done : false,
-                isQuestion6Done : false,
-                isQuiz1Done : false,
-                isQuiz2Done : false,
-                isQuiz3Done : false,
-                isQuiz4Done : false,
-                isQuiz5Done : false,
-                isQuiz6Done : false
+                isQuestionDone : defaultQuestionData,
+                isQuizDone : defaultQuizData,
             });
+            navigate('/login');
         } catch (error) {
             // Gagal mendaftar
             console.error(error);
         }
-
-        
 
         setNamaLengkapPengguna('');
         setNamaPanggilanPengguna('');
