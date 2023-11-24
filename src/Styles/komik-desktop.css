@@ -1,6 +1,6 @@
 @media screen and (min-width: 768px) {
     .dashboard {
-        background: var(--main-color) url(https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fbghyubaca720.jpg?alt=media&token=3ba4dd21-47f6-4cd7-ad8c-45f38e5817d5) no-repeat center;
+        background: var(--main-color) url(https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fbg-dashboard720.png?alt=media&token=e8c0afed-2998-4864-8a38-7cca7f96be9c) no-repeat center;
         background-size: cover;
     }
 

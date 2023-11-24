@@ -50,7 +50,18 @@ const Episode = () => {
         // eslint-disable-next-line
     }, []);
 
-    const intEpsParam = parseInt(epsId)
+    useEffect(() => {
+        if(epsId === '0'){
+            Swal.fire({
+                imageUrl: "https://placeholder.pics/svg/300x1500",
+                imageHeight: 1500,
+                imageAlt: "A tall image"
+              });
+        }
+        // eslint-disable-next-line
+    },[epsId]);
+
+    const intEpsParam = parseInt(epsId);
     const filterListEpisode = listEpisodes.filter( item => item.id_eps === intEpsParam);
 
     const imageList1 = filterListEpisode.map(item => item.images_eps).flat();
@@ -77,7 +88,13 @@ const Episode = () => {
             <BackButton linkto={'/komik'} />
             <section>
                 <div className="full d-flex align-items-center justify-content-center">
-                    <h2>Episode {epsId}</h2>
+                    <div className="logo-epi">
+                        <picture>
+                            <source srcSet='https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Flogo-episode-webp.webp?alt=media&token=d9fcbcb8-74a8-456b-af4a-9edcb1cc2d2d'/>
+                            <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Flogo-episode.png?alt=media&token=e83a1485-bdbb-4703-a4b9-44d610b558d3" alt="logo episode" className='img-fluid px-5' />
+                        </picture>
+                        <h2 className='text-center'>Episode {epsId}</h2>
+                    </div>
                 </div>
                 <ImagesArray imageList={imageList1} />
                 <Question idUser={getUserID} epsId={epsId} getAll={getListAllQuestionDone} />

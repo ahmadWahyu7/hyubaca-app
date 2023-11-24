@@ -16,7 +16,7 @@
 header {
     height: 70vh;
     width: auto;
-    background: var(--main-color) url(https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fbghyubacamobile.jpg?alt=media&token=2360e4e2-2ac0-4b4b-8cba-63f7bdcc7f1f) no-repeat top;
+    background: var(--main-color) url(https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fbg-dashboardMobile.jpg?alt=media&token=426818bc-eb2f-4029-8602-27fe727dcf03) no-repeat top;
     background-size: cover;
 }
 
@@ -42,6 +42,10 @@ header {
 }
 
 /* KOMIK */
+.list-eps {
+    background-color: var(--main-color);
+}
+
 .list-eps h2 {
     font-family: var(--title-comic);
 }

@@ -44,9 +44,17 @@ const Quiz = ({ idUser, epsId, getAll }) => {
                 <div></div>
             ): (
                 <div>
+                    <div className="question-size p-3 bg-primary rounded-3 text-center">
+                        <h2 className="p-3 bg-white text-navy mb-5 rounded shadow">KUIS EPISODE</h2>
+                        <h4 className="mb-3 text-white">Perhatian!</h4>
+                        <ol className="mb-5 text-start text-white">
+                            <li>kuis terdiri dari 2 soal kritis yaitu Pilihan Ganda dan Uraian</li>
+                            <li>sebelum kuis dimulai, pastikan telah memahami isi komik</li>
+                            <li>selesaikan seluruh kuis untuk mendapatkan ending cerita</li>
+                        </ol>
                     {isQuizStarted ? (
                         <button type="button" 
-                            className="btn btn-primary"
+                            className="btn btn-light"
                             data-bs-toggle="modal" 
                             data-bs-target="#staticBackdrop" 
                             disabled >
@@ -54,13 +62,14 @@ const Quiz = ({ idUser, epsId, getAll }) => {
                         </button>
                     ) : (
                         <button type="button" 
-                            className="btn btn-primary" 
+                            className="btn btn-light" 
                             data-bs-toggle="modal" 
                             data-bs-target="#staticBackdrop" 
                             onClick={startQuiz} >
                                 Mulai Kuis
                         </button>
                     )}
+                    </div>
         
                     {/* Modal */}
                     <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

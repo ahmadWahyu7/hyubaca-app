@@ -29,7 +29,7 @@ const Navigation = ({epsId}) => {
     };
 
         return (
-            <div className="row mb-5">
+            <div className="row mb-5 px-2">
                 <Link to={getPrevPath()} className="col btn btn-secondary m-1 d-flex justify-content-center align-items-center" onClick={scrollToTop}>
                     <img src={iconPrev} alt="icon previous" className="me-1"/>
                     Prev
