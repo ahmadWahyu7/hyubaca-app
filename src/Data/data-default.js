@@ -1,7 +1,7 @@
 const defaultQuestionData = [
     {
         id: 'questiondone0',
-        is_done: false
+        is_done: true
     },
     {
         id: 'questiondone1',
@@ -32,7 +32,7 @@ const defaultQuestionData = [
 const defaultQuizData = [
     {
         id: 'quizdone0',
-        is_done: false
+        is_done: true
     },
     {
         id: 'quizdone1',

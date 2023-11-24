@@ -48,8 +48,8 @@ const RegisterMobile = () => {
                 email: emailPengguna,
                 password: password,
                 poin: 1000,
-                isQuestionDone : defaultQuestionData,
-                isQuizDone : defaultQuizData,
+                is_question_done : defaultQuestionData,
+                is_quiz_done : defaultQuizData,
             });
             navigate('/login');
         } catch (error) {
