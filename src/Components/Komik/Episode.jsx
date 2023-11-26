@@ -15,6 +15,7 @@ import BackButton from '../BackButton';
 
 import ScrollTop from '../../Assets/arrow-up-circle.svg';
 import Navigation from './Navigation';
+import { useMediaQuery } from 'react-responsive';
 
 const Episode = () => {
     const { epsId } = useParams();
@@ -50,11 +51,19 @@ const Episode = () => {
         // eslint-disable-next-line
     }, []);
 
+    const isDesktop = useMediaQuery({ minWidth: 768 });
+
     useEffect(() => {
-        if(epsId === '0'){
+        if(epsId === '0' && isDesktop === true){
             Swal.fire({
-                imageUrl: "https://placeholder.pics/svg/300x1500",
+                imageUrl: "https://placeholder.pics/svg/500x1500",
                 imageHeight: 1500,
+                imageAlt: "A tall image"
+              });
+        }else{
+            Swal.fire({
+                imageUrl: "https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/other%2Finfo-episode.png?alt=media&token=510bb77e-8012-4104-9fc8-83d04d0fee6f",
+                imageHeight: 1038,
                 imageAlt: "A tall image"
               });
         }

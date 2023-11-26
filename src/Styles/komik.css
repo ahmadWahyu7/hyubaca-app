@@ -1,7 +1,7 @@
 /* DASHBOARD */
 
 .dashboard {
-    background-color: #3F91A6;
+    background-color: var(--main-color);
 }
 
 .dashboard h2 {
@@ -9,7 +9,7 @@
 }
 
 .dashboard .bg-sky {
-    background-color: #59BDD5;
+    background-color: #88bcf4;
     font-family: var(--main-font);
 }
 
@@ -38,7 +38,7 @@ header {
 }
 
 .points h3 {
-    color: var(--secondary-color);
+    color: var(--navy-color);
 }
 
 /* KOMIK */
@@ -47,7 +47,7 @@ header {
 }
 
 .list-eps h2 {
-    font-family: var(--title-comic);
+    font-family: var(--main-font);
 }
 .link-react {
     text-decoration: none;
@@ -55,17 +55,17 @@ header {
 
 .comic-info {
     height: 100vh;
-    background: white url('../Assets/two-girls-one-boy.png') no-repeat center;
+    background: white url(https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/other%2FcoverKomik.jpg?alt=media&token=6aa0dc5f-f836-4a32-9c83-9cd99d0592c4) no-repeat center;
     background-size: cover;
 }
 
 .comic-info h2 {
-    font-family: var(--title-comic);
+    font-family: var(--main-font);
     font-size: 2rem;
 }
 
 .desc-info {
-    background-color: rgba(19, 19, 19, 0.685);
+    background-color: rgba(22, 28, 119, 0.685);
 }
 
 .square {

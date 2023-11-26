@@ -15,6 +15,8 @@ import eyeSlash from '../../Assets/eye-slash.svg';
 const RegisterMobile = () => {
     // fungsi untuk menampilkan password
     const [showPassword, setShowPassword] = useState(false);
+    const [errorMessage, setErrorMessage] =  useState('');
+
     const toggleShow = showPassword ? 'text' : 'password';
     const toggleTextPassword = showPassword ? eyeFill : eyeSlash ;
 
@@ -63,6 +65,17 @@ const RegisterMobile = () => {
         setPassword('');
     };
 
+    const handlePassword = (e) => {
+        const newPassword = e.target.value;
+        setPassword(newPassword);
+
+        if(newPassword.length < 8){
+            setErrorMessage('Minimal 8 Karakter!')
+        }else{
+            setErrorMessage('');
+        }
+    }
+
     return (
         <div className="p-3">
             <picture>
@@ -110,7 +123,7 @@ const RegisterMobile = () => {
                         aria-label="Masukan Kata Sandi ..." 
                         aria-describedby="loginPassword2" 
                         value={password} 
-                        onChange={(e)=> setPassword(e.target.value)}/>
+                        onChange={handlePassword}/>
                     <button 
                         className="btn btn-outline-secondary" 
                         type="button" 
@@ -119,6 +132,7 @@ const RegisterMobile = () => {
                             <img src={toggleTextPassword} alt="toggleEye" />
                         </button>
                 </div>
+                <div className="text-danger mb-3">{errorMessage}</div>
                 <button type="submit" className="btn btn-primary">Daftar</button>
                 <p>Sudah memiliki Akun ? <strong> <Link to='/login'>Login di sini</Link> </strong></p>
             </form>

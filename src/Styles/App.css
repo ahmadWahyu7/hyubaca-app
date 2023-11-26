@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=GFS+Neohellenic:wght@400;700&family=Knewave&family=Raleway:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=GFS+Neohellenic&family=Knewave&family=Lato:wght@300;400;700&display=swap');
 
 .row {
     --bs-gutter-x: 0;
@@ -6,13 +6,11 @@
 
 :root {
     --main-color: #5A96E3;
-    --secondary-color: #00355B;
-    --login-bg-color: #DBE7FF;
+    --navy-color: #00355B;
 
     --main-font: 'Darumadrop One', cursive;
-    --secondary-font: 'Raleway', sans-serif;
-    --title-comic: 'Knewave', cursive, sans-serif;
-    --third-font: 'GFS Neohellenic', sans-serif;
+    --secondary-font: 'GFS Neohellenic', sans-serif;
+    --description-font: 'Lato', sans-serif;
 }
 
 * {
@@ -24,20 +22,12 @@
     height: 100vh;
 }
 
-.btn-width {
-    width: 90vw;
-}
-
-.bg-primary {
-    background-color: var(--main-color) !important;
-}
-
 .btn-navy {
-    background-color: var(--secondary-color);
+    background-color: var(--navy-color);
 }
 
 .btn-navy:hover {
-    background-color: #fff;
+    background-color: #ffffff;
     color: var(--secondary-color) !important;
 }
 
@@ -54,6 +44,6 @@
 }
 
 .text-navy {
-    color: #00355B !important;
+    color: var(--navy-color) !important;
 }
 

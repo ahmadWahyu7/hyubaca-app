@@ -41,7 +41,12 @@ const Komik = () => {
                         <Link to={`/komik/${eps.id_eps}`} className="p-1 link-react" key={`eps${eps.id_eps}`} onClick={scrollToTop}>
                             <div className="d-flex rounded p-1 bg-white text-dark shadow">
                                 <div className="me-3">
-                                    <div className="square"></div>
+                                    <div className="square rounded">
+                                    <picture>
+                                        <source srcset="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2FpointismeWebp.webp?alt=media&token=18c26e2b-7dc8-4c42-ac6d-73c8f4728287" />
+                                        <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2Fpointisme.jpg?alt=media&token=83b1e45a-b6b0-428c-9e5d-d0a221bbcf41" alt="mulai baca" className="img-fluid"/>
+                                    </picture>
+                                    </div>
                                 </div>
                                 <div className="d-flex align-items-center">
                                     <h4 className="fw-bold">Episode {eps.id_eps} : {eps.title_eps}</h4>

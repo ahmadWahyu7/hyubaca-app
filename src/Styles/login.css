@@ -11,8 +11,6 @@
 }
 
 /* LOGIN */
-.login-card h1, .login-card label {
-    font-family: var(--secondary-font-2);
-}
+
 
 /* REGISTER */
