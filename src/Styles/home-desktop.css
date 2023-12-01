@@ -3,10 +3,20 @@
     .hero h1 {
         font-size: 6rem;
     }
-    /* .img-hero {
-        height: 100vh;
-        width: auto;
-    } */
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .btn-hero {
+        padding-left: 5rem;
+        padding-right: 5rem;
+        font-size: 1.7rem;
+    }
+
+    .solution-p {
+        font-size: 1.7rem;
+    }
 
     .toggle-btn-hero1 {
         display: block;

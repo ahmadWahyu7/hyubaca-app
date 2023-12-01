@@ -23,7 +23,8 @@
 }
 
 .btn-navy {
-    background-color: var(--navy-color);
+    background-color: var(--navy-color) !important;
+    color: white;
 }
 
 .btn-navy:hover {

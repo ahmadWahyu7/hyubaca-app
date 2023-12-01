@@ -60,9 +60,9 @@ const Episode = () => {
                 imageHeight: 1500,
                 imageAlt: "A tall image"
               });
-        }else{
+        }else if (epsId === '0' && isDesktop === false){
             Swal.fire({
-                imageUrl: "https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/other%2Finfo-episode.png?alt=media&token=510bb77e-8012-4104-9fc8-83d04d0fee6f",
+                imageUrl: "https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/other%2Finfo-episode2x.png?alt=media&token=aecbdfd6-fa74-408e-bb0e-0ac72cc96569",
                 imageHeight: 1038,
                 imageAlt: "A tall image"
               });
@@ -79,7 +79,7 @@ const Episode = () => {
 
     //mendapatkan data user
     const getUser = listPengguna.filter( item => item.email === emailUser);
-    const getNamaPanggil = getUser.map( item => item.nama_panggilan);
+    const getNamaPanggil = getUser.map( item => item.nama_panggilan).toString();
     const getUserID = getUser.map( item => item.id);
     const getListAllQuestionDone = getUser.map(item => {return item.is_question_done}).flat();
     const getListAllQuizDone = getUser.map(item => {return item.is_quiz_done}).flat();

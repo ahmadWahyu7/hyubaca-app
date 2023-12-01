@@ -10,7 +10,7 @@ const Hero = () => {
 
     return (
         <div className="hero row row-cols-1 row-cols-md-2 pb-5">
-            <div className={`col d-flex flex-column justify-content-center ${textPadding}`}>
+            <div className={`col d-flex flex-column mt-5 pt-5 ${textPadding}`}>
                 <picture className={logoHyubaca}>
                     <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/logo%2Flogo%20hyubaca%20bg-white%20webp.webp?alt=media&token=afb1771c-4f75-4a79-862c-dc5c43b63a07" />
                     <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/logo%2Flogo%20hyubaca%20bg-white.png?alt=media&token=84cad5e4-1cd3-4ac1-baaa-8d23a22a4099" alt="logo hyubaca" className="logo-hero"/>
@@ -18,7 +18,7 @@ const Hero = () => {
                 <h1 className={textClass}>Hyubaca</h1>
                 <p className={textClass}>Belajar Materi tentang Aplikasi Pengolah angka seperti Ms. Excel dengan membaca komik!</p>
                 <div className="toggle-btn-hero1 mt-3">
-                    <Link to='/login' className="btn btn-primary btn-lg">Baca Sekarang</Link>
+                    <Link to='/login' className="btn btn-hero btn-navy btn-lg">Baca Sekarang</Link>
                 </div>
             </div>
             <div className="col d-flex flex-column align-items-center">
@@ -26,7 +26,7 @@ const Hero = () => {
                 alt="gambar anak sekolah terbang di atas langit" 
                 className="img-fluid animasi-hero" />
                 <div className="toggle-btn-hero2">
-                    <Link to='/login' className="btn btn-primary btn-lg">Baca Sekarang</Link>
+                    <Link to='/login' className="btn btn-hero btn-navy btn-lg">Baca Sekarang</Link>
                 </div>
             </div>
         </div>

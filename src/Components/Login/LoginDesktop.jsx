@@ -45,36 +45,17 @@ const LoginDesktop = () => {
             </div>
             <div className='col-7 p-5 d-flex align-items-center'>
                 <form onSubmit={handleLogin} className="p-3 pb-5 login-card text-center">
-                    <h1>Masuk dengan Email</h1>
-                    <div className="mt-3 mb-3">
-                        <label htmlFor="loginEmail" className="form-label">Alamat Email</label>
-                        <input 
-                            type="email" 
-                            className="form-control" 
-                            id="loginEmail" 
-                            aria-describedby="emailLogin"
-                            placeholder="Masukan Alamat Email ..."
-                            value={email}
-                            onChange={(e)=> setEmail(e.target.value)} />
+                    <h1 className="py-3">Masuk dengan Email</h1>
+                    <div className="form-floating mb-3">
+                        <input type="email" className="form-control" id="emailPengguna" placeholder="contoh : ahmad@gmail.com" value={email} onChange={(e)=> setEmail(e.target.value)} required/>
+                        <label htmlFor="emailPengguna">Email Pengguna</label>
                     </div>
-                    <label htmlFor="loginPassword" className="form-label">Kata Sandi</label>
                     <div className="input-group mb-3">
-                        <input 
-                            type={toggleShow}
-                            id="loginPassword" 
-                            className="form-control" 
-                            placeholder="Masukan Kata Sandi ..." 
-                            aria-label="Masukan Kata Sandi ..." 
-                            aria-describedby="loginPassword2"
-                            value={password}
-                            onChange={(e)=> setPassword(e.target.value)} />
-                        <button 
-                            className="btn btn-outline-secondary" 
-                            type="button" 
-                            id="loginPassword2" 
-                            onClick={handleShowPassword}>
-                                <img src={toggleTextPassword} alt="toggleEye" />
-                        </button>
+                        <div className="form-floating">
+                            <input type={toggleShow} className="form-control" id="kataSandiPengguna" placeholder="Masukan kata sandi ...." value={password} onChange={(e) => setPassword(e.target.value)} required/>
+                            <label htmlFor="kataSandiPengguna">Kata Sandi</label>
+                        </div>
+                        <button type="button" className="btn btn-outline-secondary" id="buttonPassword" onClick={handleShowPassword}><img src={toggleTextPassword} alt="toggleEye"/></button>
                     </div>
                     <button type="submit" className="btn btn-primary mb-3">MASUK</button>
                     <p>Belum memiliki Akun ? <strong> <Link to='/register'>Daftar di sini</Link> </strong></p>

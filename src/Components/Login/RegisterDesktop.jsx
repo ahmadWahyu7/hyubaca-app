@@ -85,58 +85,30 @@ const RegisterDesktop = () => {
                 </picture>
             </div>
             <div className='col-7 p-5 d-flex align-items-center'>
+            
                 <form onSubmit={handleRegister} className="p-3 pb-5 login-card text-center">
                     <h1>DAFTAR AKUN</h1>
-                    <div className="pt-3 mb-3">
-                        <input 
-                            type="text"
-                            className="form-control"
-                            id="namaLengkap"
-                            aria-describedby="lengkapNama"
-                            placeholder="Masukan nama lengkap . . . " 
-                            value={namaLengkapPengguna}
-                            onChange={(e)=> setNamaLengkapPengguna(e.target.value)} />
+                    <div className="form-floating mb-3">
+                        <input type="text" className="form-control" id="namaLengkap" placeholder="masukan nama lengkap ..." value={namaLengkapPengguna} onChange={(e)=> setNamaLengkapPengguna(e.target.value)} required/>
+                        <label htmlFor="namaLengkap">Nama Lengkap</label>
                     </div>
-                    <div className="mt-3 mb-3">
-                        <input 
-                            type="text"
-                            className="form-control"
-                            id="namaPanggilan"
-                            aria-describedby="PanggilanNama"
-                            placeholder="Masukan nama Panggilan . . . " 
-                            value={namaPanggilanPengguna}
-                            onChange={(e)=> setNamaPanggilanPengguna(e.target.value)} />
+                    <div className="form-floating mb-3">
+                        <input type="text" className="form-control" id="namaPanggilan" placeholder="masukan nama Panggilan ..." value={namaPanggilanPengguna} onChange={(e)=> setNamaPanggilanPengguna(e.target.value)} required/>
+                        <label htmlFor="namaPanggilan">Nama Panggilan</label>
                     </div>
-                    <div className="mb-3">
-                        <input 
-                            type="email" 
-                            className="form-control" 
-                            id="loginEmail" 
-                            aria-describedby="emailLogin"
-                            placeholder="Masukan Alamat Email ..." 
-                            value={emailPengguna} 
-                            onChange={(e)=> setEmailPengguna(e.target.value)}/>
+                    <div className="form-floating mb-3">
+                        <input type="email" className="form-control" id="emailPengguna" placeholder="contoh : ahmad@gmail.com" value={emailPengguna} onChange={(e)=> setEmailPengguna(e.target.value)} required/>
+                        <label htmlFor="emailPengguna">Email Pengguna</label>
                     </div>
-                    <div className="input-group mb-3">
-                        <input 
-                            type={toggleShow}
-                            id="loginPassword" 
-                            className="form-control" 
-                            placeholder="Masukan Kata Sandi ..." 
-                            aria-label="Masukan Kata Sandi ..." 
-                            aria-describedby="loginPassword2" 
-                            value={password} 
-                            onChange={handlePassword}/>
-                        <button 
-                            className="btn btn-outline-secondary" 
-                            type="button" 
-                            id="loginPassword2" 
-                            onClick={handleShowPassword}>
-                                <img src={toggleTextPassword} alt="toggleEye" />
-                            </button>
+                    <div className="input-group mb-1">
+                        <div className="form-floating">
+                            <input type={toggleShow} className="form-control" id="kataSandiPengguna" placeholder="Masukan kata sandi ...." value={password} onChange={handlePassword} required/>
+                            <label htmlFor="kataSandiPengguna">Kata Sandi</label>
+                        </div>
+                        <button type="button" className="btn btn-outline-secondary" id="buttonPassword" onClick={handleShowPassword}><img src={toggleTextPassword} alt="toggleEye"/></button>
                     </div>
-                    <div className="text-danger mb-3">{errorMessage}</div>
-                    <button type="submit" className="btn btn-primary">Daftar</button>
+                    <div className="text-danger text-start mb-3">{errorMessage}</div>
+                    <button type="submit" className="btn btn-primary mb-2">Daftar</button>
                     <p>Sudah memiliki Akun ? <strong> <Link to='/login'>Login di sini</Link> </strong></p>
                 </form>
             </div>

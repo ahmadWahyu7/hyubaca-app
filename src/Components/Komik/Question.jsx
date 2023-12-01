@@ -57,22 +57,20 @@ const Question = ({idUser, epsId, getAll}) => {
                             <div key={item.question_id}>
                                 <div className="question-text mb-3 bg-white py-5 rounded shadow">{item.question_text}</div>
                             </div>
+                        ))}
+                        <div className="option-button d-flex flex-column">
+                            {options.map((opsi) => (
+                                <button 
+                                key={opsi.option_id} 
+                                type="button" 
+                                className="btn btn-navy text-white mb-3" 
+                                onClick={()=>handlePilihan(opsi)} 
+                                disabled={opsi.option_disabled}>
+                                    {opsi.option_text}
+                                </button>
                             ))}
-                            <div className="option-button d-flex flex-column">
-                                {options.map((opsi) => (
-                                    <button 
-                                    key={opsi.option_id} 
-                                    type="button" 
-                                    className="btn btn-navy text-white mb-3" 
-                                    onClick={()=>handlePilihan(opsi)} 
-                                    disabled={opsi.option_disabled}>
-                                        {opsi.option_text}
-                                    </button>
-                                ))}
-                            </div>
-                            </div>
-                        
-                    
+                        </div>
+                    </div>
                 </div>
             )}
             

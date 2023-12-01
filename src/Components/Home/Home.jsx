@@ -5,6 +5,7 @@ import Problem from "./Problem";
 import Solution from "./Solution";
 import AboutMe from "./AboutMe";
 import Footer from "./Footer";
+import CTA from "./CTA";
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             <Problem />
             <Solution />
             <AboutMe />
+            <CTA />
             </div>
             <Footer />
         </div>

@@ -82,7 +82,7 @@ const Quiz = ({ idUser, epsId, getAll }) => {
                             soal soal
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary">Kirim</button>
+                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Kirim</button>
                         </div>
                         </div>
                     </div>

@@ -47,20 +47,13 @@ const AddComment = ({intEpsParam, namaPanggil}) => {
 
     return (
         <div className="mb-3">
-            <form className="px-3">
-                <div className="mb-3">
-                    <input 
-                    type="text" 
-                    className="form-control" 
-                    id="inputIsiKomentar" 
-                    aria-describedby="input komentar baru"
-                    value={komentarBaru}
-                    onChange={(e) => setKomentarBaru(e.target.value)}
-                    placeholder="tulis komentarmu di sini . . . "
-                    />
+            <form className="px-3" onSubmit={handleAddComment}>
+                <div className="form-floating mb-3">
+                    <input type="text" className="form-control" id="floatingInput" placeholder="masukan komentarmu ..." value={komentarBaru} onChange={(e) => setKomentarBaru(e.target.value)} />
+                    <label for="floatingInput">Komentar</label>
                 </div>
                 <div className="d-flex justify-content-end">
-                    <button type="button" className="btn btn-primary fw-bold" onClick={handleAddComment}>tambah komentar</button>
+                    <button type="submit" className="btn btn-primary fw-bold">tambah komentar</button>
                 </div>
             </form>
         </div>

@@ -81,6 +81,10 @@ header {
     height: auto;
 }
 
+.logo-epi h2 {
+    font-family: var(--main-font);
+}
+
 /* QUESTION */
 .question-size {
     width: 100vw;
