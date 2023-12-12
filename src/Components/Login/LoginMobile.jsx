@@ -30,6 +30,7 @@ const LoginMobile = () => {
             const user = userCredential.user;
             console.log(user);
             navigate('/dashboard');
+            window.scrollTo(0, 0)
         } catch (error) {
             // Gagal login
             console.error(error);
@@ -55,7 +56,7 @@ const LoginMobile = () => {
                     </div>
                     <button type="button" className="btn btn-outline-secondary" id="buttonPassword" onClick={handleShowPassword}><img src={toggleTextPassword} alt="toggleEye"/></button>
                 </div>
-                <button type="submit" className="btn btn-primary mb-3">MASUK</button>
+                <button type="submit" className="btn btn-navy mb-3">MASUK</button>
                 <p>Belum memiliki Akun ? <strong> <Link to='/register'>Daftar di sini</Link> </strong></p>
             </form>
         </div>

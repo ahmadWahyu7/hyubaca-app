@@ -108,7 +108,7 @@ const RegisterDesktop = () => {
                         <button type="button" className="btn btn-outline-secondary" id="buttonPassword" onClick={handleShowPassword}><img src={toggleTextPassword} alt="toggleEye"/></button>
                     </div>
                     <div className="text-danger text-start mb-3">{errorMessage}</div>
-                    <button type="submit" className="btn btn-primary mb-2">Daftar</button>
+                    <button type="submit" className="btn btn-navy mb-2">Daftar</button>
                     <p>Sudah memiliki Akun ? <strong> <Link to='/login'>Login di sini</Link> </strong></p>
                 </form>
             </div>

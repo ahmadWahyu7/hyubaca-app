@@ -49,6 +49,11 @@ const DashboardMobile = () => {
 
     const getUser = listPengguna?.filter( item => item.email === emailUser) || [];
 
+    //auto scroll ke atas ketika memilih episode
+    const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    };
+
     return (
         <div className='dashboard'>
             <h2 className="text-navy text-center pt-3 pb-2 bg-sky">DASHBOARD</h2>
@@ -59,7 +64,7 @@ const DashboardMobile = () => {
                     {getUser.map((item)=> (<h3 className="ms-auto text-warning" key={item.id}>{item.poin} points</h3>))}
                 </div>
             </header>
-            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-3" to='/komik'>
+            <Link className="dashboard-card row bg-white shadow rounded mx-3 mb-3" to='/komik' onClick={scrollToTop}>
                 <picture className="col-4 p-2">
                     <source srcSet="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/iconimage%2FMulaiBelajar.png?alt=media&token=969c2a03-ba81-4940-9cdb-71daa7fc9e1c" />
                     <img src="https://firebasestorage.googleapis.com/v0/b/hyubaca-58cec.appspot.com/o/dashboard%2Fmulaibelajar-pointilisme.png?alt=media&token=d8fd2273-e8fa-4f1f-816c-596a5b2fd60e" alt="mulai belajar icon" className="img-fluid"/>

@@ -53,7 +53,7 @@ const AddComment = ({intEpsParam, namaPanggil}) => {
                     <label for="floatingInput">Komentar</label>
                 </div>
                 <div className="d-flex justify-content-end">
-                    <button type="submit" className="btn btn-primary fw-bold">tambah komentar</button>
+                    <button type="submit" className="btn btn-navy fw-bold px-5">tambah komentar</button>
                 </div>
             </form>
         </div>

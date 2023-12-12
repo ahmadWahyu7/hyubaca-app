@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import Comments from "./Comments";
 import Question from "./Question";
@@ -14,7 +14,6 @@ import Swal from "sweetalert2";
 import BackButton from '../BackButton';
 
 import ScrollTop from '../../Assets/arrow-up-circle.svg';
-import Navigation from './Navigation';
 import { useMediaQuery } from 'react-responsive';
 
 const Episode = () => {
@@ -109,7 +108,9 @@ const Episode = () => {
                 <Question idUser={getUserID} epsId={epsId} getAll={getListAllQuestionDone} />
                 <ImagesArray imageList ={imageList2} />
                 <Quiz idUser={getUserID} epsId={epsId} getAll={getListAllQuizDone} />
-                <Navigation epsId={intEpsParam} />
+                <div className="d-flex justify-content-center my-5">
+                    <Link to='/komik' className='btn btn-navy btn-lg' onClick={scrollToTop}>Kembali ke List Episode</Link>
+                </div>
             </section>
             <section>
                 <h1 className='ms-3 mb-3'>Komentar</h1>
